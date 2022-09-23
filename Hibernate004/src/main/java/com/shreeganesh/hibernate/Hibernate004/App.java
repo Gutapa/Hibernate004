@@ -18,18 +18,18 @@ public class App {
 		Transaction transaction = session.getTransaction();
 		
 		Passport pass = new Passport();
-		pass.setNumber("123sdf123s");
+		pass.setNumber("567sewf3243s");
 		
 		Student s1 = new Student();
-		s1.setName("Hakas");
-		s1.setCountry("NZ");
+		s1.setName("RNR");
+		s1.setCountry("US");
 		s1.setPasssport(pass);
 		
 		transaction.begin();
 
 		//Student student = session.get(Student.class, 1);
 		//System.out.println(student);
-		session.save(pass);
+		//session.save(pass);
 		session.save(s1);
 		
 		transaction.commit();
