@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +19,17 @@ public class Passport {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "passport_id")
 	private Integer id;
+
+	@OneToOne(mappedBy = "passsport")
+	private Student s;
+	
+	public Student getS() {
+		return s;
+	}
+
+	public void setS(Student s) {
+		this.s = s;
+	}
 
 	public String getNumber() {
 		return number;
@@ -39,5 +51,6 @@ public class Passport {
 	public String toString() {
 		return "Passport [number=" + number + ", id=" + id + "]";
 	}
+
 	
 }

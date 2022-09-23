@@ -28,9 +28,12 @@ public class App {
 		transaction.begin();
 
 		//Student student = session.get(Student.class, 1);
+		Passport passport = session.get(Passport.class, 1001);
+		System.out.println(passport);
+		System.out.println(passport.getS());
 		//System.out.println(student);
 		//session.save(pass);
-		session.save(s1);
+		//session.save(s1);
 		
 		transaction.commit();
 
