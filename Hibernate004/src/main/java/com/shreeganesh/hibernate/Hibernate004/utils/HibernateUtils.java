@@ -3,6 +3,9 @@ package com.shreeganesh.hibernate.Hibernate004.utils;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import com.shreeganesh.hibernate.Hibernate004.entity.Passport;
+import com.shreeganesh.hibernate.Hibernate004.entity.Student;
+
 
 public class HibernateUtils {
 
@@ -15,7 +18,8 @@ public class HibernateUtils {
 			if(sessionf==null) {
 			Configuration c = new Configuration();
 			c.configure();
-			//c.addAnnotatedClass(Student.class);
+			c.addAnnotatedClass(Student.class);
+			c.addAnnotatedClass(Passport.class);
 			sessionf = c.buildSessionFactory();
 			}
 			
