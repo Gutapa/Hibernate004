@@ -17,20 +17,19 @@ public class App {
 		
 		Transaction transaction = session.getTransaction();
 		
-		Passport pass = new Passport();
-		pass.setNumber("567sewf3243s");
-		
-		Student s1 = new Student();
-		s1.setName("RNR");
-		s1.setCountry("US");
-		s1.setPasssport(pass);
+		/*
+		 * Passport pass = new Passport(); pass.setNumber("567sewf3243s");
+		 * 
+		 * Student s1 = new Student(); s1.setName("RNR"); s1.setCountry("US");
+		 * s1.setPasssport(pass);
+		 */
 		
 		transaction.begin();
 
 		//Student student = session.get(Student.class, 1);
 		Passport passport = session.get(Passport.class, 1001);
-		System.out.println(passport);
-		System.out.println(passport.getS());
+		passport.getS().setPasssport(null);
+		session.delete(passport);
 		//System.out.println(student);
 		//session.save(pass);
 		//session.save(s1);

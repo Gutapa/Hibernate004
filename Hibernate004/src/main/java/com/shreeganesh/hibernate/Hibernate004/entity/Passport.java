@@ -1,5 +1,6 @@
 package com.shreeganesh.hibernate.Hibernate004.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,7 +21,7 @@ public class Passport {
 	@Column(name = "passport_id")
 	private Integer id;
 
-	@OneToOne(mappedBy = "passsport")
+	@OneToOne(mappedBy = "passsport", cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
 	private Student s;
 	
 	public Student getS() {
